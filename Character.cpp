@@ -52,10 +52,12 @@ void Character::getInput()
 
 void Character::displayCharacterInfo()
 {
-  cout << "|============|" << endl;
-  cout << "Character Info" << endl;
-  cout << "|============|" << endl;
-  cout << characterName << endl;
+  if (characterName.empty()) {
+    getInput();
+  }
+  system("clear");
+  cout << "|====================================|" << endl;
+  cout << characterName << "|===|" << "LEVEL:" << characterLevel << endl;
   cout << "XP:" << characterXP << endl;
-  cout << "Level: " << characterLevel << endl;
+  cout << "|====================================|" << endl;
 }

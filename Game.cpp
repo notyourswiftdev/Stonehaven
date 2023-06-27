@@ -1,16 +1,45 @@
+#include <iostream>
+
 #include "Character.h"
 
-int main() {
+using namespace std;
+
+int main()
+{
+  int choice;
+  bool gameOn = true;
   Character character;
-  string quitGame;
+  
+  cout << "**********************\n";
+  cout << " 1 - Start the game.\n";
+  cout << " 2 - Choose new character.\n";
+  cout << " 3 - Help.\n";
+  cout << " 4 - Exit.\n";
+  cout << " Enter your choice and press enter: ";
 
-  character.getInput();
-  character.displayCharacterInfo();
-
-  while (quitGame != "quit")
+  while (gameOn != false)
   {
-    getline(cin, quitGame);
+    cin >> choice;
+    switch (choice)
+    {
+    case 1:
+      character.displayCharacterInfo();
+      break;
+    case 2:
+      cout << "New Character.\n";
+      break;
+    case 3:
+      cout << "Help Screen!\n";
+      break;
+    case 4:
+      gameOn = false;
+      break;
+    default:
+      cout << "Not a valid choice. \n";
+      cout << "Choose again!.\n";
+      cin >> choice;
+      break;
+    }
   }
-  cout << "Game Quit!" << endl;
   return 0;
 }
