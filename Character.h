@@ -9,9 +9,12 @@ private:
 	string characterName;
 	int characterLevel;
 	int characterXP;
+	int characterAttack;
+	int characterStrength;
+	int characterDefense;
 public:
 	Character();
-	Character(string, int, int);
+	Character(string, int, int, int, int, int);
 	void setCharacterName(string);
 	void setCharacterXP(int);
 	void setCharacterLevel(int);
@@ -20,4 +23,5 @@ public:
 	int getCharacterLevel();
 	void getInput();
 	void displayCharacterInfo();
+	void createCharacterTable();
 };
